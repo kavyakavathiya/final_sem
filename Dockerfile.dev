@@ -1,0 +1,9 @@
+# use base image of node 
+FROM node:16
+# folder in docker container
+WORKDIR /frontend
+# copies package.json
+COPY ./frontend/package*.json ./
+RUN npm install
+COPY ./frontend/ ./
+CMD ["npm", "run", "start"]
